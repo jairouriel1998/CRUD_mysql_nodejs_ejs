@@ -20,6 +20,16 @@ app.set('views', path.join(__dirname, 'views'));
 //middlewares
 app.use(morgan('dev'));
 
+/*Remoto*/
+app.use(myConnection(mysql, {
+    host: 'remotemysql.com', 
+    user: 'OuYNijpaSl',
+    password: 'klc9b82B6s',
+    port:3306,
+    database: 'OuYNijpaSl'
+}, 'single'));
+
+/* Original
 app.use(myConnection(mysql, {
     host: 'localhost', 
     user: 'root',
@@ -27,7 +37,7 @@ app.use(myConnection(mysql, {
     port:3306,
     database: 'airisdb'
 }, 'single'));
-
+*/
 
 app.use(express.urlencoded({extended: false}));
 
